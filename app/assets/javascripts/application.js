@@ -10,8 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require html5shiv-printshiv
 //= require jquery
+//= require html5shiv-printshiv
+//= require turbolinks
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery.details
