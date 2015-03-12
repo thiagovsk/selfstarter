@@ -14,6 +14,7 @@
 //= require html5shiv-printshiv
 //= require turbolinks
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery.ui.all
 //= require jquery.details
 //= require jquery.textchange
