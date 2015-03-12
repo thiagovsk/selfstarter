@@ -17,11 +17,14 @@ $(document).on 'page:change', ->
     creditCard.cardExpirationYear = $('#new_payment #payment_card_expiration_year').val()
     creditCard.cardNumber = $('#new_payment #payment_card_number').val()
     creditCard.cardCVV = $('#new_payment #payment_card_cvv').val()
+    # pega os erros de validação nos campos do form
+    #Verifica se há erros
     # se não há erros, gera o card_hash...
     creditCard.generateHash (cardHash) ->
-    # ...coloca-o no form...
+      # ...coloca-o no form...
       form.append $('<input type="hidden" name="payment[card_hash]" id="payment_card_hash">').val(cardHash)
       # e envia o form
       form.get(0).submit()
-      console.log(cardHash)
+      return
+    false
   return
