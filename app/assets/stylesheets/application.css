@@ -12,7 +12,6 @@
  *= require bootstrap_and_overrides
  *= require reset
  *= require main
- *= require jquery.ui.all
  */
 .hidden
 {

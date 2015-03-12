@@ -22,10 +22,9 @@ class PaymentsController < ApplicationController
   # POST /payments
   def create
     @payment = Payment.new(payment_params)
-    Transaction.save_transaction(@payment)
 
-    if @payment.save
-      redirect_to @payment, notice: 'Payment was successfully created.'
+    if @payment.save && Transaction.save_transaction(@payment)
+      redirect_to root_path, notice: 'Payment was successfully created.'
     else
       render action: 'new'
     end
