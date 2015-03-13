@@ -1,45 +1,58 @@
 <%= form_for(@payment) do |f| %>
   <% if @payment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
       <ul>
       <% @payment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <div class="alert alert-danger">
+          <li><%= msg %></li>
+        </div>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :card_number %><br>
-    <%= f.text_field :card_number %>
+<div class="col-xs-4">
+<div class="form-group">
+    <%= f.label :card_number, "Numero do cartão de crédito" %><br>
+    <%= f.text_field :card_number, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :card_holder_name %><br>
-    <%= f.text_field :card_holder_name %>
+  <div class="form-group">
+    <%= f.label :card_holder_name, "Nome no cartão de crédito" %><br>
+    <%= f.text_field :card_holder_name, class: "form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :card_expiration_month %><br>
-    <%= f.text_field :card_expiration_month %>
+  <div class="form-group">
+    <%= f.label :card_expiration_month, "Mês de vencimento" %><br>
+    <%= f.text_field :card_expiration_month, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :card_expiration_year %><br>
-    <%= f.text_field :card_expiration_year %>
+  <div class="form-group">
+    <%= f.label :card_expiration_year, "Ano de vencimento"%><br>
+    <%= f.text_field :card_expiration_year, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :card_cvv %><br>
-    <%= f.text_field :card_cvv %>
+  <div class="form-group">
+    <%= f.label :card_cvv, "Código de verificação do cartão"%><br>
+    <%= f.text_field :card_cvv, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :payment_amount %><br>
-    <%= f.text_field :payment_amount %>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+      <%= f.text_field :payment_amount, class: "form-control", placeholder: "Valor da doação"%>
+
+      <div class="input-group-addon">.00</div>
+    </div>
   </div>
 
   <div id="field_errors">
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%=link_to raw("<i class=\"fa fa-arrow-circle-o-left \"> Voltar </i>"),
+                    root_path , class: "btn  btn-warning"%>
+    <%= button_tag(type: "submit", class: "btn btn-success") do %>
+      <i class="fa fa-money"></i> Pagar
+    <% end %>
+
   </div>
+
+</div>
 <% end %>
