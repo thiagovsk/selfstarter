@@ -5,6 +5,9 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
 
+#rails admin
+gem 'rails_admin'
+
 group :development do
   gem 'sqlite3'
   gem 'pry-rails'
@@ -49,6 +52,4 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 #bootstrap gems
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'

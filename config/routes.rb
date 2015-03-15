@@ -1,4 +1,5 @@
 Selfstarter::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :payments
 
   root :to => 'preorder#index'

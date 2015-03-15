@@ -24,6 +24,12 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(payment_params)
 
     if @payment.save && Transaction.save_transaction(@payment)
+      @order = Order.create(:name => Settings.product_name,
+                            :price => @payment.payment_amount.to_f,
+                            # TO DO
+                            :user_id => 1,
+                            :payment_option => PaymentOption.last
+                            )
       redirect_to root_path, notice: 'Payment was successfully created.'
     else
       render action: 'new'
