@@ -53,3 +53,7 @@ gem 'jbuilder', '~> 2.0'
 
 #bootstrap gems
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+#facebook login
+gem 'omniauth'
+gem 'omniauth-facebook'

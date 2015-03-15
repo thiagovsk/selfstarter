@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306231531) do
+ActiveRecord::Schema.define(version: 20150315163902) do
 
   create_table "orders", id: false, force: true do |t|
     t.string   "token"
@@ -84,7 +84,11 @@ ActiveRecord::Schema.define(version: 20150306231531) do
   add_index "transactions", ["payment_id"], name: "index_transactions_on_payment_id"
 
   create_table "users", force: true do |t|
-    t.string   "email"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
